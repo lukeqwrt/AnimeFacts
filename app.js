@@ -32,8 +32,8 @@ function displayAnime(data){
 
     const pokemonHTMLString = data
         .map((animeList) => `
-        <li class="anime" onclick="showFacts(this)" id="${animeList.anime_name}">
-            <div class="img-container">
+        <li class="anime">
+            <div class="img-container" onclick="showFacts(this)" id="${animeList.anime_name}">
                 <img class="card-image" src="${animeList.anime_img}"/>
             </div>    
             <div class="side" onclick="flipCard(this)">
@@ -101,14 +101,15 @@ console.log()
         `
     // animediv.innerHTML = pokemonHTMLString;
     
-    const factdiv = name.querySelector('.facts')
+    const factdiv = name.parentElement.querySelector('.facts')
+    
     // const side = name.querySelector('.side')
     const imgContainer = name.querySelector('.img-container')
     // console.log(animeFactsString)
     factdiv.innerHTML = animeFactsString
     
     // imgContainer.style.display = "none"
-    name.classList.add('sideActive')
+    name.parentElement.classList.add('sideActive')
     // name.style.pointerEvents = "none"
     // const sound = name.querySelector('.side')
     // sound.style.pointerEvents = "all"
