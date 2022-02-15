@@ -29,14 +29,14 @@ function displayAnime(data){
       }
 
       
-    //   onclick="flipCard(this)"
+
     const pokemonHTMLString = data
         .map((animeList) => `
         <li class="anime">
             <div class="img-container" onclick="showFacts(this)" id="${animeList.anime_name}">
                 <img class="card-image" src="${animeList.anime_img}"/>
             </div>    
-            <div class="side" >
+            <div class="side" onclick="flipCard(this)">
                 <div class="info">
                     <span class="number">#${animeList.anime_id.toString().padStart(3, '0')}</span>
                     <h3 class="name"> ${removeUnderline(animeList.anime_name)} </h3>  
